@@ -40,3 +40,93 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+//Updating Nav items
+
+let anchorTags = document.querySelectorAll("nav a")
+for(let i = 0; i < anchorTags.length; i++) {
+  anchorTags[i].textContent = `${siteContent.nav['nav-item-' + (i + 1)]}`;
+}
+
+anchorTags.forEach(element => {
+  element.style.color = "green"
+})
+
+let nav = document.querySelector("nav")
+
+
+let newTag = document.createElement("a")
+newTag.textContent = "Bruh"
+newTag.style.color = "green"
+
+
+let anotherTag = document.createElement("a")
+anotherTag.textContent = "Click here!"
+anotherTag.style.color = "green"
+
+
+nav.prepend(newTag)
+nav.appendChild(anotherTag)
+
+
+
+
+//Adding H1
+let mainTitle = document.querySelector("h1")
+
+mainTitle.innerHTML = "DOM <br />IS <br /> AWESOME"
+
+// let newH1 = document.createElement('h1')
+// newH1.textContent = "IS"
+
+// let anotherH1 = document.createElement('h1')
+// anotherH1.textContent = "AWESOME"
+
+// mainTitle.appendChild(newH1);
+// newH1.appendChild(anotherH1);
+
+//Adding Button text
+let buttonText = document.querySelector("button");
+buttonText.textContent = siteContent.cta.button
+
+//Adding snippet img
+let codeSnippet = document.getElementById("cta-img");
+codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
+
+//Adding titles to middle content
+let textTitle = document.querySelectorAll(".text-content h4")
+console.log(textTitle);
+
+textTitle[0].textContent = siteContent["main-content"]["features-h4"]
+textTitle[1].textContent = siteContent["main-content"]["about-h4"]
+textTitle[2].textContent = siteContent["main-content"]["services-h4"]
+textTitle[3].textContent = siteContent["main-content"]["product-h4"]
+textTitle[4].textContent = siteContent["main-content"]["vision-h4"]
+
+//Adding P's to middle content
+let textItems = document.querySelectorAll(".main-content p")
+console.log(textItems)
+
+textItems[0].textContent = siteContent["main-content"]["features-content"]
+textItems[1].textContent = siteContent["main-content"]["about-content"]
+textItems[2].textContent = siteContent["main-content"]["services-content"]
+textItems[3].textContent = siteContent["main-content"]["product-content"]
+textItems[4].textContent = siteContent["main-content"]["vision-content"]
+
+//Adding middle img
+let accrossScreen = document.getElementById("middle-img")
+accrossScreen.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+//Adding contact info
+let contactTitle = document.querySelector(".contact h4")
+contactTitle.textContent = siteContent["contact"]["contact-h4"]
+
+let contactInfo = document.querySelectorAll(".contact p")
+contactInfo[0].innerHTML = '123 Way 456 Street <br />Somewhere, USA'
+contactInfo[1].textContent = siteContent["contact"]["phone"]
+contactInfo[2].textContent = siteContent["contact"]["email"]
+
+//Adding footer
+let footer = document.querySelector("footer p")
+footer.textContent = siteContent["footer"]["copyright"]
